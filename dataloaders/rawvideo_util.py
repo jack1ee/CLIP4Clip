@@ -47,9 +47,9 @@ class RawVideoExtractorCV2():
             sample_fp = fps
         if interval == 0: interval = 1
 
-        inds = [ind for ind in np.arange(0, fps, interval)]
+        inds = [ind for ind in np.arange(0, frameCount, interval)]
         assert len(inds) >= sample_fp
-        inds = inds[:sample_fp]
+        inds = inds[:total_duration]
 
         ret = True
         images, included = [], []
